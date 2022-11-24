@@ -293,7 +293,7 @@ function runMatter() {
     {
       render: {
         fillStyle: `#B0B1B3`,
-        strokeStyle: `rgb(0,0,0)`,
+        strokeStyle: `gray`,
         lineWidth: 1
       },
       isStatic: true,
