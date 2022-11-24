@@ -192,10 +192,11 @@ async function app() {
   // Gui content will change depending on which model is in the query string.
   const urlParams = new URLSearchParams(window.location.search);
   if (!urlParams.has('model')) {
-    alert('Cannot find model in the query string.');
+    //alert('Cannot find model in the query string.');
+    urlParams.set('model', 'movenet');
+    window.location.search = urlParams;
     return;
   }
-
   await setupDatGui(urlParams);
 
   stats = setupStats();
@@ -217,11 +218,11 @@ app();
 const usePoses = (poses) => {
   const Body = m.Body;
   const attractiveBody = m.attractiveBody;
-  const poseX = poses[0].keypoints[10].x
-  const poseY = poses[0].keypoints[10].y
+  const poseX = poses[0].keypoints[0].x;
+  const poseY = poses[0].keypoints[0].y;
   Body.translate(attractiveBody, {
-    x: (poseX - attractiveBody.position.x) * 1.2,
-    y: (poseY - attractiveBody.position.y) * 1.2
+    x: (poseX - attractiveBody.position.x),
+    y: (poseY - attractiveBody.position.y)
   });
 
 }
@@ -293,7 +294,7 @@ function runMatter() {
       render: {
         fillStyle: `#B0B1B3`,
         strokeStyle: `rgb(0,0,0)`,
-        lineWidth: 0
+        lineWidth: 1
       },
       isStatic: true,
       plugin: {
