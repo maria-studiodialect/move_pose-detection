@@ -216,6 +216,7 @@ app();
 
 
 const usePoses = (poses) => {
+  
   const Body = m.Body;
   const attractiveBody = m.attractiveBody;
   const poseX = poses[0].keypoints[0].x;
@@ -224,7 +225,6 @@ const usePoses = (poses) => {
     x: (poseX - attractiveBody.position.x),
     y: (poseY - attractiveBody.position.y)
   });
-
 }
 
 
@@ -240,8 +240,7 @@ Matter.use('matter-attractors');
 Matter.use('matter-wrap');
 
 
-
-function runMatter() {
+function runMatter(choice) {
   // module aliases
   var Engine = Matter.Engine,
     Events = Matter.Events,
@@ -258,9 +257,7 @@ function runMatter() {
   // create engine
   var engine = Engine.create();
 
-  engine.world.gravity.y = 0
-  engine.world.gravity.x = 0
-  engine.world.gravity.scale = 0.1
+
 
   // create renderer
   var render = Render.create({
@@ -271,7 +268,7 @@ function runMatter() {
       width: dimensions.width,
       height: dimensions.height,
       wireframes: false,
-      background: '#B0B1B3'
+      background: '#B0B1B'
     }
   });
 
@@ -281,9 +278,15 @@ function runMatter() {
   // Runner.run(runner, engine);
   // Render.run(render);
 
-  // create demo scene
-  var world = engine.world;
-  world.gravity.scale = 0;
+
+  switch (choice) {
+    case 1:
+      engine.world.gravity.y = 0
+      engine.world.gravity.x = 0
+      engine.world.gravity.scale = 0.1
+        // create demo scene
+      var world = engine.world;
+      world.gravity.scale = 0;
 
   // create a body with an attractor
   var attractiveBody = Bodies.circle(
@@ -311,73 +314,6 @@ function runMatter() {
 
   World.add(world, attractiveBody);
 
-  // add some bodies that to be attracted
-  for (var i = 0; i < 60; i += 1) {
-    /*
-    let x = Common.random(0, render.options.width);
-    let y = Common.random(0, render.options.height);
-    let s = Common.random() > 0.6 ? Common.random(10, 80) : Common.random(4, 60);
-    let poligonNumber = Common.random(3, 6);
-    var body = Bodies.polygon(
-      x, y,
-      poligonNumber,
-      s,
-
-      {
-        mass: s / 20,
-        friction: 0,
-        frictionAir: 0.02,
-        angle: Math.round(Math.random() * 360),
-        render: {
-          fillStyle: '#FFFFFF',
-          strokeStyle: `#DDDDDD`,
-          lineWidth: 2
-        }
-      }
-    );
-
-    World.add(world, body);
-
-
-    let r = Common.random(0, 1)
-    var circle = Bodies.circle(x, y, Common.random(2, 8), {
-      mass: 0.1,
-      friction: 0,
-      frictionAir: 0.01,
-      render: {
-        fillStyle: r > 0.3 ? `#FF2D6A` : `rgb(240,240,240)`,
-        strokeStyle: `#E9202E`,
-        lineWidth: 2
-      }
-    });
-    World.add(world, circle);
-
-    var circle = Bodies.circle(x, y, Common.random(2, 20), {
-      mass: 6,
-      friction: 0,
-      frictionAir: 0,
-      render: {
-        fillStyle: r > 0.3 ? `#4267F8` : `rgb(240,240,240)`,
-        strokeStyle: `#3257E8`,
-        lineWidth: 4
-      }
-    });
-    World.add(world, circle);
-
-    var circle = Bodies.circle(x, y, Common.random(2, 30), {
-      mass: 0.2,
-      friction: 0.6,
-      frictionAir: 0.8,
-      render: {
-        fillStyle: `rgb(240,240,240)`,
-        strokeStyle: `#FFFFFF`,
-        lineWidth: 3
-      }
-    });
-    World.add(world, circle);
-    */
-  }
-
   var radius = 20
   // art & design
   var illustration = Bodies.rectangle(70, 500, 237, 80, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/01.png', xScale: 0.5, yScale: 0.5 } } })
@@ -396,17 +332,115 @@ function runMatter() {
   World.add(world, [
     illustration, art, threeD, graphic, photo, documentary, animation, play, climb
   ]);
-  // add mouse control
-  var mouse = Mouse.create(render.canvas);
+  break;
+    case 2:
+      var world = engine.world;
 
-  Events.on(engine, 'afterUpdate', function () {
-    if (!mouse.position.x) return;
-    // smoothly move the attractor body towards the mouse
+      function percentX(percent) {
+        return Math.round((percent / 100) * dimensions.width);
+      }
+      function percentY(percent) {
+        return Math.round((percent / 100) * dimensions.height);
+      }
+      
+      // return a random integer between two values, inclusive
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
 
-  });
+
+      var attractiveBody = Bodies.circle(
+        render.options.width / 2,
+        render.options.height / 2,
+        (Math.max(dimensions.width / 10, dimensions.height / 10)) / 2,
+        {
+          render: {
+            fillStyle: `#B0B1B3`,
+            strokeStyle: `gray`,
+            lineWidth: 1
+          },
+          isStatic: true,
+        });
+
+        World.add(world, attractiveBody);
+
+      let bodies = [];
+      var ceiling = Bodies.rectangle(percentX(100) / 2, percentY(0) - 10, percentX(100), 20, { isStatic: true });
+      var floor = Bodies.rectangle(percentX(100) / 2, percentY(100) + 10, percentX(100), 20, { isStatic: true });
+      var rightWall = Bodies.rectangle(percentX(100) + 10, percentY(100) / 2, 20, percentY(100), { isStatic: true });
+      var leftWall = Bodies.rectangle(percentX(0) - 10, percentY(100) / 2, 20, percentY(100), { isStatic: true });
+      ceiling.render.visible = false;
+      floor.render.visible = false;
+      rightWall.render.visible = false;
+      leftWall.render.visible = false;
+      bodies.push(ceiling);
+      bodies.push(floor);
+      bodies.push(rightWall);
+      bodies.push(leftWall);
+
+      var dance = Bodies.rectangle(200, 0, 237, 80, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/01.png', xScale: 0.5, yScale: 0.5 } } })
+      var sprint = Bodies.rectangle(250, 0, 288, 75, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/02.png', xScale: 0.5, yScale: 0.5 } } })
+      var stretch = Bodies.rectangle(800, 0, 307, 59, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/03.png', xScale: 0.5, yScale: 0.5 } } })
+      var push = Bodies.rectangle(600, 0, 223, 60, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/04.png', xScale: 0.5, yScale: 0.5 } } })
+      var lift = Bodies.rectangle(800, 0, 174, 62, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/05.png', xScale: 0.5, yScale: 0.5 } } })
+      // video
+      var bend = Bodies.rectangle(120, 0, 238, 59, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/06.png', xScale: 0.5, yScale: 0.5 } } })
+      var kick = Bodies.rectangle(500, 0, 200, 70, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/07.png', xScale: 0.5, yScale: 0.5 } } })
+      var play = Bodies.rectangle(700, 0, 208, 71, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/08.png', xScale: 0.5, yScale: 0.5 } } })
+      var climb = Bodies.rectangle(400, 0, 249, 62, { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/09.png', xScale: 0.5, yScale: 0.5 } } })
+      
+      // add all bodies (boundaries and circles) to the world
+        
+      bodies.push(climb, play, kick, bend, lift, push, stretch, sprint, dance);
+      Composite.add(world, bodies);
+
+      let intervalID;
+
+      function changeGravity() {
+        if (!intervalID) {
+          intervalID = setInterval(setGravity, 3000);
+        }
+      }
+
+      let intervalNumber = 1;
+      function setGravity() {
+        if (intervalNumber === 1) {
+          // console.log("interval " + intervalNumber + ", down");
+          world.gravity.y = 0.5;
+          world.gravity.x = 0;
+          intervalNumber += 1;
+        } else if (intervalNumber === 2) {
+          // console.log("interval " + intervalNumber + ", up");
+          world.gravity.y = -0.5;
+          world.gravity.x = 0;
+          intervalNumber += 1;
+        } else if (intervalNumber === 3) {
+          // console.log("interval " + intervalNumber + ", right");
+          world.gravity.x = 0.5;
+          world.gravity.y = 0;
+          intervalNumber += 1;
+        } else {
+          // console.log("interval " + intervalNumber + ", left");
+          world.gravity.x = -0.5;
+          world.gravity.y = 0;
+          intervalNumber = 1;
+        }
+      }
+
+      // hold in place for testing
+      // world.gravity.y = 0;
+      // world.gravity.x = 0;
+
+      changeGravity();
+      break;  
+  }
+
 
   // return a context for MatterDemo to control
   let data = {
+    choice,
     attractiveBody,
     Body,
     engine: engine,
@@ -452,8 +486,10 @@ function setWindowSize() {
   return dimensions;
 }
 
-let m = runMatter()
+let m = runMatter(1)
 setWindowSize()
 $(window).resize(debounce(setWindowSize, 250))
+
+
 
 
