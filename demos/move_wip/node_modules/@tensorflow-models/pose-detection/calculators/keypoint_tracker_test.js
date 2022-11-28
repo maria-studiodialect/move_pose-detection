@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var keypoint_tracker_1 = require("./keypoint_tracker");
 describe('Keypoint tracker', function () {
     var trackerConfig = {
@@ -225,4 +225,3 @@ describe('Keypoint tracker', function () {
         expect(tracks[3].lastTimestamp).toEqual(1200000);
     });
 });
-//# sourceMappingURL=keypoint_tracker_test.js.map

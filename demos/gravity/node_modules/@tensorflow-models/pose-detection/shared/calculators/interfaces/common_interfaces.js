@@ -15,5 +15,4 @@
  * limitations under the License.
  * =============================================================================
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=common_interfaces.js.map
+exports.__esModule = true;
