@@ -303,7 +303,7 @@ function runMatter(choice) {
       render: {
         fillStyle: `#B0B1B3`,
         strokeStyle: `rgba(255, 255, 255, 0.2)`,
-            lineWidth: 30
+        lineWidth: 3,
       },
       isStatic: true,
       plugin: {
@@ -322,69 +322,67 @@ function runMatter(choice) {
 
   var radius = 20
   // art & design
-  var illustration = Bodies.rectangle(70, 500, 237, 80, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/01.png', xScale: 0.5, yScale: 0.5 } } })
-  var art = Bodies.rectangle(35, 460, 288, 75, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/02.png', xScale: 0.5, yScale: 0.5 } } })
-  var threeD = Bodies.rectangle(90, 460, 307, 59, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/03.png', xScale: 0.5, yScale: 0.5 } } })
-  var graphic = Bodies.rectangle(60, 420, 223, 60, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/04.png', xScale: 0.5, yScale: 0.5 } } })
-  var photo = Bodies.rectangle(50, 380, 174, 62, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/05.png', xScale: 0.5, yScale: 0.5 } } })
+  var illustration = Bodies.rectangle(600, 500, (237*2), (80*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/01.png', xScale: 1, yScale: 1 } } })
+  var art = Bodies.rectangle(35, 460, (288*2), (75*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/02.png', xScale: 1, yScale: 1 } } })
+  var threeD = Bodies.rectangle(90, 460, (307*2), (59*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/03.png', xScale: 1, yScale: 1 } } })
+  var graphic = Bodies.rectangle(60, 420, (223*2), (60*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/04.png', xScale: 1, yScale: 1 } } })
+  var photo = Bodies.rectangle(50, 380, (174*2), (62*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/05.png', xScale: 1, yScale: 1 } } })
   // video
-  var documentary = Bodies.rectangle(220, 540, 238, 59, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/06.png', xScale: 0.5, yScale: 0.5 } } })
-  var animation = Bodies.rectangle(200, 490, 200, 70, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/07.png', xScale: 0.5, yScale: 0.5 } } })
-  var play = Bodies.rectangle(190, 440, 208, 71, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/08.png', xScale: 0.5, yScale: 0.5 } } })
-  var climb = Bodies.rectangle(190, 440, 249, 62, { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/09.png', xScale: 0.5, yScale: 0.5 } } })
-
-  var danceD = Bodies.rectangle(100, 650, (61*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01,  render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-d.png', xScale: 1.5, yScale: 1.5 } } })
-  var danceA = Bodies.rectangle(191.5, 650, (62*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-a.png', xScale:1.5, yScale: 1.5 } } })
-   var danceN = Bodies.rectangle(284.5, 650, (56*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01,  render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-n.png', xScale: 1.5, yScale: 1.5 } } })
-    var danceC = Bodies.rectangle(368.5, 650, (60*1.5), (93*1.5), {mass: 0.1, friction: 0, frictionAir: 0.01,  render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-c.png', xScale: 1.5, yScale: 1.5 } } })
-     var danceE = Bodies.rectangle(458.5, 650, (60*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-e.png', xScale: 1.5, yScale: 1.5 } } })
+  var documentary = Bodies.rectangle(220, 540, (238*2), (59*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/06.png', xScale: 1, yScale: 1 } } })
+  var animation = Bodies.rectangle(200, 490, (200*2), (70*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/07.png', xScale: 1, yScale: 1 } } })
+  var play = Bodies.rectangle(190, 440, (208*2), (71*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/08.png', xScale: 1, yScale: 1 } } })
+  var climb = Bodies.rectangle(190, 440, (249*2), (62*2), { chamfer: { radius: radius }, mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/09.png', xScale: 1, yScale: 1 } } })
+  
+  var danceD = Bodies.rectangle((100*3.5), 1300, (61*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-d.png', xScale: 2.5, yScale: 2.5 } } })
+  var danceA = Bodies.rectangle((191.5*3.5), 1300, (62*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-a.png', xScale: 2.5, yScale: 2.5 } } })
+   var danceN = Bodies.rectangle((284.5*3.5), 1300, (56*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-n.png', xScale: 2.5, yScale: 2.5 } } })
+    var danceC = Bodies.rectangle((368.5*3.5), 1300, (60*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-c.png', xScale: 2.5, yScale: 2.5 } } })
+     var danceE = Bodies.rectangle((458.5*3.5), 1300, (60*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-e.png', xScale: 2.5, yScale: 2.5 } } })
      
-//Sprint
-     var sprintAnd = Bodies.rectangle(548.5, 650, (67*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-&.png', xScale: 1.5, yScale: 1.5 } } })
-     var sprintS = Bodies.rectangle(649, 650, (55*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-S.png', xScale: 1.5, yScale: 1.5 } } })
-   var sprintP = Bodies.rectangle(731.5, 650, (60*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-p.png', xScale: 1.5, yScale: 1.5 } } })
-var sprintR = Bodies.rectangle(821.5, 650, (36*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-r.png', xScale: 1.5, yScale: 1.5 } } })
-   var sprintI = Bodies.rectangle(875.5, 650, (18*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-i.png', xScale: 1.5, yScale: 1.5 } } })
-    var sprintN = Bodies.rectangle(902.5, 650, (55*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-n.png', xScale: 1.5, yScale: 1.5 } } })
-     var sprintT = Bodies.rectangle(985, 650, (38*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-t.png', xScale: 1.5, yScale: 1.5 } } })
+     var dance2D = Bodies.rectangle((100*3.5), 200, (61*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Bend-&.png', xScale: 2.5, yScale: 2.5 } } })
+     var dance2A = Bodies.rectangle((191.5*3.5), 200, (62*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Bend-B.png', xScale: 2.5, yScale: 2.5 } } })
+      var dance2N = Bodies.rectangle((284.5*3.5), 200, (56*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Bend-e.png', xScale: 2.5, yScale: 2.5 } } })
+       var dance2C = Bodies.rectangle((368.5*3.5), 200, (60*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Bend-n.png', xScale: 2.5, yScale: 2.5 } } })
+        var dance2E = Bodies.rectangle((458.5*3.5), 200, (60*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Bend-d.png', xScale: 2.5, yScale: 2.5 } } })
+        
+  //Sprint
+     var sprintAnd = Bodies.rectangle(548.5, 650, (67*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-&.png', xScale: 2.5, yScale: 2.5 } } })
+     var sprintS = Bodies.rectangle(649, 650, (55*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-S.png', xScale: 2.5, yScale: 2.5 } } })
+   var sprintP = Bodies.rectangle(731.5, 650, (60*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-p.png', xScale: 2.5, yScale: 2.5 } } })
+  var sprintR = Bodies.rectangle(821.5, 650, (36*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-r.png', xScale: 2.5, yScale: 2.5 } } })
+   var sprintI = Bodies.rectangle(875.5, 650, (18*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-i.png', xScale: 2.5, yScale: 2.5 } } })
+    var sprintN = Bodies.rectangle(902.5, 650, (55*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-n.png', xScale: 2.5, yScale: 2.5 } } })
+     var sprintT = Bodies.rectangle(985, 650, (38*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Sprint-t.png', xScale: 2.5, yScale: 2.5 } } })
      
-//Stretch
-     var stretchAnd = Bodies.rectangle(1042, 650, (67*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-&.png', xScale: 1.5, yScale: 1.5 } } })
-     var stretchS = Bodies.rectangle(1142.5, 650, (53*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-S.png', xScale: 1.5, yScale: 1.5 } } })
-   var stretchT = Bodies.rectangle(1222, 650, (40*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-t.png', xScale: 1.5, yScale: 1.5 } } })
-  var stretchR = Bodies.rectangle(1282, 650, (32*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-r.png', xScale: 1.5, yScale: 1.5 } } })
-   var stretchE = Bodies.rectangle(1330, 650, (55*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-e.png', xScale: 1.5, yScale: 1.5 } } })
-    var stretchT2 = Bodies.rectangle(1412.5, 650, (40*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-t.png', xScale: 1.5, yScale: 1.5 } } })
-     var stretchC = Bodies.rectangle(1472.5, 650, (57*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-c.png', xScale: 1.5, yScale: 1.5 } } })
-     var stretchH = Bodies.rectangle(1558, 650, (57*1.5), (93*1.5), { mass: 0.1, friction: 0, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-h.png', xScale: 1.5, yScale: 1.5 } } })
-      // add all bodies (boundaries and circles) to the world
+  //Stretch
+     var stretchAnd = Bodies.rectangle(1042, 650, (67*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-&.png', xScale: 2.5, yScale: 2.5 } } })
+     var stretchS = Bodies.rectangle(1142.5, 650, (53*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-S.png', xScale: 2.5, yScale: 2.5 } } })
+   var stretchT = Bodies.rectangle(1222, 650, (40*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-t.png', xScale: 2.5, yScale: 2.5 } } })
+  var stretchR = Bodies.rectangle(1282, 650, (32*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-r.png', xScale: 2.5, yScale: 2.5 } } })
+   var stretchE = Bodies.rectangle(1330, 650, (55*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-e.png', xScale: 2.5, yScale: 2.5 } } })
+    var stretchT2 = Bodies.rectangle(1412.5, 650, (40*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-t.png', xScale: 2.5, yScale: 2.5 } } })
+     var stretchC = Bodies.rectangle(1472.5, 650, (57*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-c.png', xScale: 2.5, yScale: 2.5 } } })
+     var stretchH = Bodies.rectangle(1558, 650, (57*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-h.png', xScale: 2.5, yScale: 2.5 } } })
+      
+     //Stretch
+     var stretch2And = Bodies.rectangle((1042*2), 650, (65*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Jump-&.png', xScale: 2.5, yScale: 2.5 } } })
+     var stretch2S = Bodies.rectangle((1142.5*2), 650, (52*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Jump-J.png', xScale: 2.5, yScale: 2.5 } } })
+   var stretch2T = Bodies.rectangle((1222*2), 650, (54*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Jump-u.png', xScale: 2.5, yScale: 2.5 } } })
+  var stretch2R = Bodies.rectangle((1282*2), 650, (85*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Jump-m.png', xScale: 2.5, yScale: 2.5 } } })
+   var stretch2E = Bodies.rectangle((1330*2), 650, (60*2.5), (93*2.5), { mass: 0.8, friction: 0.1, frictionAir: 0.01, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Jump-p.png', xScale: 2.5, yScale: 2.5 } } })
+     // add all bodies (boundaries and circles) to the world
+        
 
   // add all of the bodies to the world
   World.add(world, [
     //illustration, art, threeD, graphic, photo, documentary, animation, play, climb
-     danceD, danceA, danceN, danceC, danceE, sprintAnd, sprintS, sprintP, sprintI, sprintR, sprintN, sprintT, stretchS, stretchAnd,  stretchT, stretchR,   stretchE, stretchT2,  stretchC,  stretchH
+     danceD, danceA, danceN, danceC, danceE, dance2D, dance2A, dance2N, dance2C, dance2E,
+     //sprintAnd, sprintS, sprintP, sprintI, sprintR, sprintN, sprintT, 
+     stretchS, stretchAnd,  stretchT, stretchR,   stretchE, stretchT2,  stretchC,  stretchH, stretch2S, stretch2And,  stretch2T, stretch2R,   stretch2E
   ]);
-  var cons1 = Constraint.create({bodyA: danceD, bodyB: danceA, length: 95, stiffness: 1, render: {visible:false}});
-  var cons2 = Constraint.create({bodyA: danceA, bodyB: danceN, length: 95, stiffness: 1, render: {visible:false}});
-  var cons3 = Constraint.create({bodyA: danceN, bodyB: danceC, length: 95, stiffness: 1, render: {visible:false}});
-  var cons4 = Constraint.create({bodyA: danceC, bodyB: danceE, length: 95, stiffness: 1, render: {visible:false}});
-  var cons5 = Constraint.create({bodyA: stretchAnd, bodyB: stretchS, length: 95, stiffness: 1, render: {visible:false}});
-  var cons6 = Constraint.create({bodyA: stretchS, bodyB: stretchT, length: 95, stiffness: 1, render: {visible:false}});
-  var cons7 = Constraint.create({bodyA: stretchT, bodyB: stretchR, length: 95, stiffness: 1, render: {visible:false}});
-  var cons8 = Constraint.create({bodyA: stretchR, bodyB: stretchE, length: 95, stiffness: 1, render: {visible:false}});
-  var cons9 = Constraint.create({bodyA: stretchE, bodyB: stretchT2, length: 95, stiffness: 1, render: {visible:false}});
-  var cons10 = Constraint.create({bodyA: stretchT2, bodyB: stretchC, length: 95, stiffness: 1, render: {visible:false}});
-  var cons11 = Constraint.create({bodyA: stretchC, bodyB: stretchH, length: 95, stiffness: 1, render: {visible:false}});
-  var cons12 = Constraint.create({bodyA: sprintAnd, bodyB: sprintS, length: 95, stiffness: 1, render: {visible:false}});
-  var cons13 = Constraint.create({bodyA: sprintS, bodyB: sprintP, length: 95, stiffness: 1, render: {visible:false}});
-  var cons14 = Constraint.create({bodyA: sprintP, bodyB: sprintR, length: 95, stiffness: 1, render: {visible:false}});
-  var cons15 = Constraint.create({bodyA: sprintR, bodyB: sprintI, length: 95, stiffness: 1, render: {visible:false}});
-  var cons16 = Constraint.create({bodyA: sprintI, bodyB: sprintN, length: 95, stiffness: 1, render: {visible:false}});
-  var cons17 = Constraint.create({bodyA: sprintN, bodyB: sprintT, length: 95, stiffness: 1, render: {visible:false}});
 
 
-  // World.add(world, [cons1, cons2, cons3, cons4, cons5, cons6, cons7, cons8, cons9, cons10, cons11, cons12, cons13, cons14, cons15, cons16, cons17]);
-  break;
+    break;
     case 2:
       var world = engine.world;
 

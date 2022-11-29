@@ -366,7 +366,7 @@ function runMatter(choice) {
           render: {
             fillStyle: `#B0B1B3`,
             strokeStyle: `rgba(255, 255, 255, 0.2)`,
-            lineWidth: 30
+            lineWidth: 3
           },
           isStatic: true,
         });
@@ -387,16 +387,17 @@ function runMatter(choice) {
       bodies.push(rightWall);
       bodies.push(leftWall);
 
-      var dance = Bodies.rectangle(500, 200, (237*2), (80*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/01.png', xScale:1, yScale:1 } } })
-      var sprint = Bodies.rectangle(1350, 200, (288*2), (75*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/02.png', xScale:1, yScale:1 } } })
-      var stretch = Bodies.rectangle(800, 100, (307*2), (59*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/03.png', xScale:1, yScale:1 } } })
-      var push = Bodies.rectangle(200, 400, (223*2), (60*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/04.png', xScale:1, yScale:1 } } })
-      var lift = Bodies.rectangle(800, 0, (174*2), (62*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/05.png', xScale:1, yScale:1 } } })
+      var dance = Bodies.rectangle(500, 200, (237*3), (80*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/01.png', xScale: 1.5, yScale: 1.5 } } })
+      var sprint = Bodies.rectangle(2350, 200, (288*3), (75*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/02.png', xScale: 1.5, yScale: 1.5 } } })
+      var stretch = Bodies.rectangle(800, 200, (307*3), (59*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/03.png', xScale: 1.5, yScale: 1.5 } } })
+      var push = Bodies.rectangle(200, 400, (223*3), (60*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/04.png', xScale: 1.5, yScale: 1.5 } } })
+      var lift = Bodies.rectangle(2500, 0, (274*3), (62*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/05.png', xScale: 1.5, yScale: 1.5 } } })
       // video
-      var bend = Bodies.rectangle(420, 20, (238*2), (59*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/06.png', xScale:1, yScale:1 } } })
-      var kick = Bodies.rectangle(1200, 400, (200*2), (70*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/07.png', xScale:1, yScale:1 } } })
-      var play = Bodies.rectangle(700, 0, (208*2), (71*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/08.png', xScale:1, yScale:1 } } })
-      var climb = Bodies.rectangle(400, 0, (249*2), (62*2), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/09.png', xScale:1, yScale:1 } } })
+      var bend = Bodies.rectangle(420, 20, (238*3), (59*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/06.png', xScale: 1.5, yScale: 1.5 } } })
+      var kick = Bodies.rectangle(2200, 800, (200*3), (70*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/07.png', xScale: 1.5, yScale: 1.5 } } })
+      var play = Bodies.rectangle(2000, 0, (208*3), (72*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/08.png', xScale: 1.5, yScale: 1.5 } } })
+      var climb = Bodies.rectangle(400, 0, (249*3), (62*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/09.png', xScale: 1.5, yScale: 1.5 } } })
+      var jump = Bodies.rectangle(2000, 0, (502*1.5), (140*1.5), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/10.png', xScale: 1.5, yScale: 1.5 } } })
       
       var danceD = Bodies.rectangle(100, 650, (61*1.5), (93*1.5), { chamfer: { radius: radius }, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-d.png', xScale: 1.5, yScale: 1.5 } } })
   var danceA = Bodies.rectangle(191.5, 650, (62*1.5), (93*1.5), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-a.png', xScale:1.5, yScale: 1.5 } } })
@@ -424,7 +425,7 @@ var sprintR = Bodies.rectangle(821.5, 650, (36*1.5), (93*1.5), { render: { sprit
      var stretchH = Bodies.rectangle(1558, 650, (57*1.5), (93*1.5), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Stretch-h.png', xScale: 1.5, yScale: 1.5 } } })
       // add all bodies (boundaries and circles) to the world
         
-      bodies.push(climb, play, kick, bend, lift, push, stretch, sprint, dance);
+      bodies.push(climb, play, kick, bend, lift, push, stretch, sprint, dance, jump);
       Composite.add(world, bodies);
 
       World.add(world, [
