@@ -219,14 +219,17 @@ const usePoses = (poses) => {
   
   const Body = m.Body;
   const attractiveBody = m.attractiveBody;
-  const poseX = poses[0].keypoints[10].x;
-  const poseY = poses[0].keypoints[10].y;
+  const pose = poses[0].keypoints[10];
 
-  
-  Body.translate(attractiveBody, {
-    x: (poseX - attractiveBody.position.x),
-    y: (poseY - attractiveBody.position.y)
-  });
+  const score = pose.score != null ? pose.score : 1;
+  const scoreThreshold = 0.5 || 0;
+
+  if (score >= scoreThreshold) {
+    Body.translate(attractiveBody, {
+      x: (pose.x - attractiveBody.position.x),
+      y: (pose.y - attractiveBody.position.y)
+    });
+  }
 }
 
 
