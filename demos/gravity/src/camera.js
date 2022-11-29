@@ -78,6 +78,7 @@ export class Camera {
 
     const { targetFPS, sizeOption } = cameraParam;
     const $size = params.VIDEO_SIZE[sizeOption];
+    
     const videoConfig = {
       'audio': false,
       'video': {
@@ -108,6 +109,7 @@ export class Camera {
 
     const videoWidth = camera.video.videoWidth;
     const videoHeight = camera.video.videoHeight;
+    console.log(videoWidth, videoHeight)
     // Must set below two lines, otherwise video element doesn't show.
     camera.video.width = videoWidth;
     camera.video.height = videoHeight;
