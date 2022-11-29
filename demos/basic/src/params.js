@@ -21,8 +21,8 @@ export const DEFAULT_LINE_WIDTH = 2;
 export const DEFAULT_RADIUS = 4;
 
 export const VIDEO_SIZE = {
-  '3072 X 1728': { width: 3072, height: 1728 },
   '1600 X 900': { width: 1600, height: 900 },
+  '3072 X 1728': { width: 3072, height: 1728 },
   '1280 X 720': { width: 1280, height: 720 },
   '640 X 480': { width: 640, height: 480 },
   '640 X 360': { width: 640, height: 360 },
