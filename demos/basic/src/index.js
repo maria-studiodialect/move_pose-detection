@@ -237,8 +237,8 @@ const usePoses = (poses) => {
 var canvas = $("#wrapper-canvas").get(0);
 
 var dimensions = {
-  width: 1600,
-  height: 900
+  width: 3072,
+  height: 1728
 };
 
 Matter.use('matter-attractors');
@@ -427,11 +427,11 @@ function debounce(func, wait, immediate) {
 
 function setWindowSize() {
   let dimensions = {};
-  dimensions.width = 1600;
-  dimensions.height = 900;
+  dimensions.width = 3072;
+  dimensions.height = 1728;
 
-  m.render.canvas.width = 1600;
-  m.render.canvas.height = 900;
+  m.render.canvas.width = 3072;
+  m.render.canvas.height = 1728;
   return dimensions;
 }
 
