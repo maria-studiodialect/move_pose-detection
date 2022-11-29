@@ -398,7 +398,7 @@ function runMatter(choice) {
       var play = Bodies.rectangle(2000, 0, (208*3), (72*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/08.png', xScale: 1.5, yScale: 1.5 } } })
       var climb = Bodies.rectangle(400, 0, (249*3), (62*3), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/09.png', xScale: 1.5, yScale: 1.5 } } })
       var jump = Bodies.rectangle(2000, 0, (502*1.5), (140*1.5), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/10.png', xScale: 1.5, yScale: 1.5 } } })
-      
+      // extra
       var danceD = Bodies.rectangle(100, 650, (61*1.5), (93*1.5), { chamfer: { radius: radius }, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-d.png', xScale: 1.5, yScale: 1.5 } } })
   var danceA = Bodies.rectangle(191.5, 650, (62*1.5), (93*1.5), { render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-a.png', xScale:1.5, yScale: 1.5 } } })
    var danceN = Bodies.rectangle(284.5, 650, (56*1.5), (93*1.5), { chamfer: { radius: radius }, render: { sprite: { texture: 'https://maria-studiodialect.github.io/hosted-assets/Dance-n.png', xScale: 1.5, yScale: 1.5 } } })
