@@ -303,7 +303,7 @@ function runMatter(choice) {
       render: {
         fillStyle: `#B0B1B3`,
         strokeStyle: `rgba(255, 255, 255, 0.2)`,
-            lineWidth: 30
+        lineWidth: 30
       },
       isStatic: true,
       plugin: {
