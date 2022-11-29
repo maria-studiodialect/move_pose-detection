@@ -226,8 +226,8 @@ const usePoses = (poses) => {
 
   if (score >= scoreThreshold) {
     Body.translate(attractiveBody, {
-      x: (pose.x - attractiveBody.position.x),
-      y: (pose.y - attractiveBody.position.y)
+      x: ((pose.x * 2.4) - attractiveBody.position.x),
+      y: ((pose.y * 2.4) - attractiveBody.position.y)
     });
   }
 }
@@ -364,8 +364,8 @@ function runMatter(choice) {
         {
           render: {
             fillStyle: `#B0B1B3`,
-            strokeStyle: `gray`,
-            lineWidth: 1
+            strokeStyle: `rgba(255, 255, 255, 0.2)`,
+            lineWidth: 30
           },
           isStatic: true,
         });

@@ -226,8 +226,8 @@
 
   if (score >= scoreThreshold) {
     Body.translate(attractiveBody, {
-      x: (pose.x - attractiveBody.position.x),
-      y: (pose.y - attractiveBody.position.y)
+      x: ((pose.x * 2.4) - attractiveBody.position.x),
+      y: ((pose.y * 2.4) - attractiveBody.position.y)
     });
   }
  }
@@ -287,7 +287,7 @@
  
    switch (choice) {
      case 1:
-       engine.world.gravity.y = 0
+       engine.world.gravity.y = 030
        engine.world.gravity.x = 0
        engine.world.gravity.scale = 0.1
          // create demo scene
@@ -302,8 +302,8 @@
      {
        render: {
          fillStyle: `#B0B1B3`,
-         strokeStyle: `gray`,
-         lineWidth: 1
+         strokeStyle: `rgba(255, 255, 255, 0.2)`,
+            lineWidth: 30
        },
        isStatic: true,
        plugin: {
@@ -364,8 +364,8 @@
          {
            render: {
              fillStyle: `#B0B1B3`,
-             strokeStyle: `gray`,
-             lineWidth: 1
+             strokeStyle: `rgba(255, 255, 255, 0.2)`,
+              lineWidth: 30
            },
            isStatic: true,
          });
