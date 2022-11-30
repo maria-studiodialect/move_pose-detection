@@ -221,8 +221,25 @@ const usePoses = (poses) => {
   const attractiveBody = m.attractiveBody;
   const pose = poses[0].keypoints[10];
 
+  const imageSize = {width: 1280, height: 720}
+
+  function flipPosesHorizontal(poses, imageSize) {
+      for (var _i = 0, poses_1 = poses; _i < poses_1.length; _i++) {
+          var pose = poses_1[_i];
+          for (var _a = 0, _b = pose.keypoints; _a < _b.length; _a++) {
+              var kp = _b[_a];
+              kp.x = imageSize.width - 1 - kp.x;
+          }
+      }
+      return poses;
+  }
+
+  flipPosesHorizontal(poses, imageSize);
+
   const score = pose.score != null ? pose.score : 1;
-  const scoreThreshold = 0.5 || 0;
+  const scoreThreshold = 0.3 || 0;
+
+
 
   if (score >= scoreThreshold) {
     Body.translate(attractiveBody, {
@@ -496,7 +513,7 @@ var sprintR = Bodies.rectangle(821.5, 650, (36*2.5), (93*2.5), { render: { sprit
       // world.gravity.y = 0;
       // world.gravity.x = 0;
 
-       //changeGravity();
+       changeGravity();
       break;  
   }
 

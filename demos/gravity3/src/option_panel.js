@@ -51,8 +51,8 @@ export async function setupDatGui(urlParams) {
   // The model folder contains options for model selection.
   const modelFolder = gui.addFolder('Model');
 
-  const model = 'posenet';
-  let type = urlParams.get('type');
+  const model = 'movenet';
+  let type = 'multipose';
   const backendFromURL = urlParams.get('backend');
 
   switch (model) {
